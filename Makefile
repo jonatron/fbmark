@@ -1,5 +1,5 @@
-PREFIX ?= /usr/local
-
+# put toolchain-binary/ into toolchain/ from https://github.com/spartan263/vizio_oss-toolchain
+CC = toolchain/bin/armv7a-mediatek451_001_vfp-linux-gnueabi-gcc
 CFLAGS += -g -O2
 
 PROGRAMS = fb_mandelbrot fb_rectangle fb_sierpinski
@@ -17,6 +17,6 @@ fb_sierpinski: fb_sierpinski.c
 clean:
 	$(RM) $(PROGRAMS)
 
-install: all
-	install -d $(DESTDIR)$(PREFIX)/bin
-	install $(PROGRAMS) $(DESTDIR)$(PREFIX)/bin
+#install: all
+#	install -d $(DESTDIR)$(PREFIX)/bin
+#	install $(PROGRAMS) $(DESTDIR)$(PREFIX)/bin
